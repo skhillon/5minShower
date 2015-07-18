@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    var musicQuery: MPMediaQuery!
+    var musicPlayer = MPMusicPlayerController()
+    
+    musicQuery = musicQuery.songsQuery()
+    musicPlayer.setQueueWithQuery( _ query: musicQuery )
+    musicPlayer.play()
 
 }
 

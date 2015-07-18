@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5FA96E4B-FDF8-4A57-A902-0A80A058C98C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>5minShower</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E041369CC284F7F0D55FA792C8F238FF64388C4B</key>
+		<string>https://github.com/SaagarGodithi/5minShower.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>5minShower/5minShower.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E041369CC284F7F0D55FA792C8F238FF64388C4B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SaagarGodithi/5minShower.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E041369CC284F7F0D55FA792C8F238FF64388C4B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E041369CC284F7F0D55FA792C8F238FF64388C4B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>5minShower</string>
+		</dict>
+	</array>
+</dict>
+</plist>
