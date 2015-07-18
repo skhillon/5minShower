@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MediaPlayer
+
 
 class ViewController: UIViewController {
 
@@ -19,7 +21,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    var musicQuery = MPMediaQuery()
+    var musicPlayer = MPMusicPlayerController()
+    
+    func setQueueWithItemCollection(_ itemCollection: MPMediaItemCollection!)
 }
 
