@@ -9,6 +9,7 @@
 import UIKit
 import MediaPlayer
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -27,6 +28,5 @@ class ViewController: UIViewController {
     musicQuery = musicQuery.songsQuery()
     musicPlayer.setQueueWithQuery( _ query: musicQuery )
     musicPlayer.play()
-
 }
 

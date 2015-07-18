@@ -5,13 +5,21 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>5FA96E4B-FDF8-4A57-A902-0A80A058C98C</string>
+=======
+	<string>A68C0315-27EB-4C68-A3F5-5226EB87FD80</string>
+>>>>>>> 9564c339cea856d2d6485cb763a289818c2cdf5b
 	<key>IDESourceControlProjectName</key>
 	<string>5minShower</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E041369CC284F7F0D55FA792C8F238FF64388C4B</key>
+<<<<<<< HEAD
 		<string>https://github.com/SaagarGodithi/5minShower.git</string>
+=======
+		<string>https://github.com/SaagarGodithi/5minShower</string>
+>>>>>>> 9564c339cea856d2d6485cb763a289818c2cdf5b
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>5minShower/5minShower.xcodeproj</string>
@@ -21,7 +29,11 @@
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
+<<<<<<< HEAD
 	<string>https://github.com/SaagarGodithi/5minShower.git</string>
+=======
+	<string>https://github.com/SaagarGodithi/5minShower</string>
+>>>>>>> 9564c339cea856d2d6485cb763a289818c2cdf5b
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
