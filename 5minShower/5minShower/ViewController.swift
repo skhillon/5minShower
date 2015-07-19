@@ -22,11 +22,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var musicQuery: MPMediaQuery!
-    var musicPlayer = MPMusicPlayerController()
+    notificationCenter = NSNotificationCenter()
     
-    musicQuery = musicQuery.songsQuery()
-    musicPlayer.setQueueWithQuery( _ query: musicQuery )
-    musicPlayer.play()
+    notificationCenter.addObserver ( self )
+    
 }
+
 
