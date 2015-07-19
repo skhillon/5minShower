@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         self.doneButton.hidden = true
         
         timer.label = timerLabel
+        timer.audioPlayer = audioPlayer
         
         
         // Setup Animations
@@ -83,7 +84,7 @@ class ViewController: UIViewController {
         timer.start()
         
         // Animaion start code
-        let timeInterval = NSTimeInterval (300)
+        let timeInterval = NSTimeInterval(300)
         animateWave(timeInterval)
         mainWaterController.start()
     }
@@ -174,12 +175,11 @@ class ViewController: UIViewController {
     }
     
     func animateWave(time: NSTimeInterval) {
-        UIView.animateWithDuration(10.0, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+        UIView.animateWithDuration(time, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.wave.frame.origin.y = 0
             }, completion: {
                 (value: Bool) in
                 self.mainWaterController.stop()
-                self.audioPlayer.playRandomFromArray()
         })
     }
     

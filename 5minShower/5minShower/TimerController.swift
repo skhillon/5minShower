@@ -14,13 +14,16 @@ class TimerController: NSObject {
     var timer = NSTimer()
     var startTime = NSTimeInterval()
     
+    // Audio Controlling
+    var audioPlayer = AudioPlayer()
+    
     // Properties of the label string
     var strHours = "00"
     var strMinutes = "0"
     var strSeconds = "00"
     var strFraction = "00"
     
-    var totalTime: NSTimeInterval = 10
+    var totalTime: NSTimeInterval = 300
     
     // Properties of actual values
     var hours = 0
@@ -45,8 +48,7 @@ class TimerController: NSObject {
         var timeLeft = totalTime - elapsedTime
         
         if timeLeft <= 0 {
-            println("timer up")
-            
+            audioPlayer.playRandomFromArray()
             self.stop()
         }
         
