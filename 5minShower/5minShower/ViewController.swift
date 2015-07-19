@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     var intervalToTakeShower = NSTimeInterval()
     
+    @IBOutlet weak var ranBut: UIButton!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var volumeButton: UIButton!
     var volumeButtonSelected = false
@@ -23,6 +24,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var waterSavedLabel: UILabel!
     @IBOutlet var shuffleButton: UIButton!
+    
+    // Animation vars
+    var mainWaterController = WaterController()
+    @IBOutlet weak var pcView: PCView!
+    var wave = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +41,18 @@ class ViewController: UIViewController {
         
         timer.label = timerLabel
         
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Setup Animations
+        mainWaterController.view = self.view
+        mainWaterController.showerView = pcView
+        //self.view.bringSubviewToFront(pcView)
+        
+        setupWaves()
     }
     
+    @IBAction func anyButPressed(sender: AnyObject) {
+        println("hi")
+    }
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -48,6 +63,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playButtonTapped(sender: AnyObject) {
+        println("playbuttontapped")
         music.shuffleMusic()
         music.playMusic()
         UIView.animateWithDuration(2.0, animations: {
@@ -63,6 +79,10 @@ class ViewController: UIViewController {
         self.volumeButton.hidden = false
         
         timer.start()
+        
+        // Animaion start code
+        animateWave(NSTimeInterval(60 * 5))
+        mainWaterController.start()
     }
     
     @IBAction func shuffleButtonTapped(sender: AnyObject) {
@@ -114,8 +134,31 @@ class ViewController: UIViewController {
         {
             self.waterSavedLabel.text = "You went over the goal by \(gallonsSaved * -1). We know you can do better!"
         }
-        
-        self.waterSavedLabel.hidden = false
+        UIView.animateWithDuration(3.0, animations: {
+            self.waterSavedLabel.hidden = false
+        })
+        mainWaterController.stop()
+    }
+    
+    // MARK: Animation Functions
+    
+    func setupWaves() {
+        wave.image = UIImage(named: "Wave")
+        var width = self.view.frame.width * 2.5
+        var frame = CGRectMake(-10, self.view.frame.height, width, width * 0.8505)
+        wave.frame = frame
+        self.view.addSubview(wave)
+        self.view.sendSubviewToBack(wave)
+    }
+    
+    func animateWave(time: NSTimeInterval) {
+        UIView.animateWithDuration(time, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.wave.frame.origin.y = -0.02 * self.wave.frame.height
+            }, completion: {
+                (value: Bool) in
+                self.mainWaterController.stop()
+                println("STOP")
+        })
     }
     
 }
