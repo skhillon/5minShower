@@ -108,7 +108,7 @@ class TimerController: NSObject {
         var minutes = 0
         var seconds = 0
         var fraction = 0
-        label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strFraction)"
+        label.text = "\(strMinutes):\(strSeconds)"
     }
     
     // MARK: Start/Stop Functions

@@ -31,13 +31,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pauseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VBx-B3-ikQ"/>
-                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wo9-H5-2G9"/>
-                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfM-nR-gCi"/>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiM-yJ-aAR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iED-Hq-27Y">
-                                <rect key="frame" x="275" y="352" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iED-Hq-27Y">
+                                <rect key="frame" x="279" y="323" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,12 +46,14 @@
                             <constraint firstItem="ko3-nA-elr" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="188" id="2YC-iL-wuz"/>
                             <constraint firstAttribute="centerX" secondItem="d3x-yP-mv7" secondAttribute="centerX" id="EKO-aI-H1L"/>
                             <constraint firstAttribute="centerY" secondItem="d3x-yP-mv7" secondAttribute="centerY" id="ZEG-RQ-qpw"/>
+                            <constraint firstItem="iED-Hq-27Y" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="8" id="ghs-fe-NCA"/>
+                            <constraint firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="kbT-aF-8Qw"/>
                             <constraint firstAttribute="centerX" secondItem="ko3-nA-elr" secondAttribute="centerX" id="qtf-jd-QOh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="d3x-yP-mv7" id="sU6-JP-egi"/>
-                        <outlet property="stopButton" destination="ko3-nA-elr" id="GI9-Ss-Jsg"/>
+                        <outlet property="stopButton" destination="ko3-nA-elr" id="NGp-4m-CJf"/>
                         <outlet property="timerLabel" destination="iED-Hq-27Y" id="HVy-8F-zdF"/>
                     </connections>
                 </viewController>
