@@ -94,6 +94,7 @@ class ViewController: UIViewController {
         self.shuffleButton.hidden = true
         self.background.hidden = true
         self.doneButton.hidden = true
+        self.playButton.hidden = false
         
         self.timer.resetTimer()
     }
