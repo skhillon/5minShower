@@ -14,6 +14,7 @@
 		8F02A20E1B5ADF310036CE27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F02A20C1B5ADF310036CE27 /* LaunchScreen.xib */; };
 		8F02A21A1B5ADF310036CE27 /* _minShowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */; };
 		CB7094891B5B5EA900C6165D /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7094881B5B5EA900C6165D /* TimerController.swift */; };
+		CBBB83901B5B7FD100CB8A46 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB838F1B5B7FD100CB8A46 /* Music.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		8F02A2181B5ADF310036CE27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _minShowerTests.swift; sourceTree = "<group>"; };
 		CB7094881B5B5EA900C6165D /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		CBBB838F1B5B7FD100CB8A46 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				8F02A2031B5ADF310036CE27 /* AppDelegate.swift */,
 				8F02A2051B5ADF310036CE27 /* ViewController.swift */,
+				CBBB838F1B5B7FD100CB8A46 /* Music.swift */,
 				CB7094881B5B5EA900C6165D /* TimerController.swift */,
 				8F02A2071B5ADF310036CE27 /* Main.storyboard */,
 				8F02A20A1B5ADF310036CE27 /* Images.xcassets */,
@@ -218,6 +221,7 @@
 				8F02A2061B5ADF310036CE27 /* ViewController.swift in Sources */,
 				8F02A2041B5ADF310036CE27 /* AppDelegate.swift in Sources */,
 				CB7094891B5B5EA900C6165D /* TimerController.swift in Sources */,
+				CBBB83901B5B7FD100CB8A46 /* Music.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

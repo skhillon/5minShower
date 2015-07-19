@@ -2,11 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_minShower" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -22,7 +24,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CKU-5x-Jsq"/>
+                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zmI-qR-ijh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko3-nA-elr">
@@ -31,7 +33,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiM-yJ-aAR"/>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yZp-vU-ehe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iED-Hq-27Y">
@@ -40,25 +42,44 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFr-yS-qYD">
+                                <rect key="frame" x="16" y="20" width="46" height="40"/>
+                                <state key="normal" image="VolumeOn">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" image="VolumeOff"/>
+                                <state key="selected" image="VolumeOff"/>
+                                <state key="highlighted" image="VolumeOff"/>
+                                <connections>
+                                    <action selector="volumeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VbW-of-u4W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ko3-nA-elr" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="188" id="2YC-iL-wuz"/>
+                            <constraint firstItem="qFr-yS-qYD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="APD-Gb-bWm"/>
                             <constraint firstAttribute="centerX" secondItem="d3x-yP-mv7" secondAttribute="centerX" id="EKO-aI-H1L"/>
                             <constraint firstAttribute="centerY" secondItem="d3x-yP-mv7" secondAttribute="centerY" id="ZEG-RQ-qpw"/>
                             <constraint firstItem="iED-Hq-27Y" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="8" id="ghs-fe-NCA"/>
                             <constraint firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="kbT-aF-8Qw"/>
                             <constraint firstAttribute="centerX" secondItem="ko3-nA-elr" secondAttribute="centerX" id="qtf-jd-QOh"/>
+                            <constraint firstItem="qFr-yS-qYD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vNS-6j-v5R"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="playButton" destination="d3x-yP-mv7" id="sU6-JP-egi"/>
-                        <outlet property="stopButton" destination="ko3-nA-elr" id="NGp-4m-CJf"/>
-                        <outlet property="timerLabel" destination="iED-Hq-27Y" id="HVy-8F-zdF"/>
+                        <outlet property="playButton" destination="d3x-yP-mv7" id="CPT-CZ-z5m"/>
+                        <outlet property="stopButton" destination="ko3-nA-elr" id="b9D-Ma-kXa"/>
+                        <outlet property="timerLabel" destination="iED-Hq-27Y" id="ZwW-Au-TFU"/>
+                        <outlet property="volumeButton" destination="qFr-yS-qYD" id="OvI-kR-fK0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="122" y="352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="VolumeOff" width="43" height="40"/>
+        <image name="VolumeOn" width="46" height="40"/>
+    </resources>
 </document>

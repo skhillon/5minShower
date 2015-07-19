@@ -45,6 +45,7 @@ class TimerController: NSObject {
         var timeLeft = totalTime - elapsedTime
         
         if timeLeft <= 0 {
+            
             self.stop()
         }
         
@@ -122,7 +123,7 @@ class TimerController: NSObject {
     
     func stop() {
         timer.invalidate()
-        resetTimer()
+        //resetTimer()
     }
     
     

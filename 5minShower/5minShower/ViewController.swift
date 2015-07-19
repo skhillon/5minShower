@@ -7,21 +7,25 @@
 //
 
 import UIKit
-import MediaPlayer
 
 class ViewController: UIViewController {
     
     var timer = TimerController()
+    var music = Music()
     
+    @IBOutlet weak var volumeButton: UIButton!
+    var volumeButtonSelected = false
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
-    //@IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stopButton.hidden = true
+        self.timerLabel.hidden = true
+        self.volumeButton.hidden = true
         self.stopButton.alpha = 0
+        self.timerLabel.alpha = 0
         
         timer.label = timerLabel
         
@@ -33,30 +37,36 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    let myMusicPlayer = MPMusicPlayerController()
-    let myMediaQuery = MPMediaQuery()
-    
     @IBAction func playButtonTapped(sender: AnyObject) {
-        println ("play button tapped")
-        myMusicPlayer.setQueueWithQuery(myMediaQuery)
-        myMusicPlayer.play()
+        music.playMusic()
         UIView.animateWithDuration(2.0, animations: {
             self.playButton.alpha = 0
             self.stopButton.alpha = 1
+            self.timerLabel.alpha = 1
             self.stopButton.hidden = false
+            self.timerLabel.hidden = false
         })
         self.playButton.hidden = true
-        
+        self.volumeButton.hidden = false
+                    
         timer.start()
     }
     
-    @IBAction func stopButtonTapped(sender: AnyObject) {
-        stop()
+    @IBAction func volumeButtonTapped(sender: AnyObject) {
+        self.volumeButton.selected = !volumeButtonSelected
+        volumeButtonSelected = !volumeButtonSelected
+        if volumeButtonSelected
+        {
+            music.stop()
+        }
+        else
+        {
+            music.playMusic()
+        }
     }
     
-    func stop ()
-    {
-        myMusicPlayer.pause()
+    @IBAction func stopButtonTapped(sender: AnyObject) {
+        music.stop()
         timer.stop()
     }
     
