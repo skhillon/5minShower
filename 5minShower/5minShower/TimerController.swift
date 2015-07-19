@@ -16,7 +16,7 @@ class TimerController: NSObject {
     
     // Properties of the label string
     var strHours = "00"
-    var strMinutes = "00"
+    var strMinutes = "0"
     var strSeconds = "00"
     var strFraction = "00"
     
@@ -80,7 +80,7 @@ class TimerController: NSObject {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         
-        label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strFraction)"
+        label.text = "\(strMinutes):\(strSeconds)"
     }
     
     

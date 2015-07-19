@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     
     var intervalToTakeShower = NSTimeInterval()
     
-    
-    
+    @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var volumeButton: UIButton!
     var volumeButtonSelected = false
     @IBOutlet weak var playButton: UIButton!
@@ -32,6 +31,7 @@ class ViewController: UIViewController {
         self.volumeButton.hidden = true
         self.waterSavedLabel.hidden = true
         self.shuffleButton.hidden = true
+        self.background.hidden = true
         
         timer.label = timerLabel
         
@@ -92,10 +92,18 @@ class ViewController: UIViewController {
         timer.stop()
         let gallonsSaved = (Int)(2.1 * (300 - doubleTimeTaken) / 60 )
         
+        UIView.animateWithDuration(2.0, animations: {
+            self.volumeButton.alpha = 0
+            self.timerLabel.alpha = 0
+            self.stopButton.alpha = 0
+            self.shuffleButton.alpha = 0
+        })
+        
         self.volumeButton.hidden = true
         self.timerLabel.hidden = true
         self.stopButton.hidden = true
         self.shuffleButton.hidden = true
+        self.background.hidden = false
         
         if doubleTimeTaken < 300.0
         {
