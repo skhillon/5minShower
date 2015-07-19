@@ -85,6 +85,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
+        println("done button tapped")
+        
         self.stopButton.hidden = true
         self.timerLabel.hidden = true
         self.volumeButton.hidden = true
