@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     var intervalToTakeShower = NSTimeInterval()
     
-//    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var volumeButton: UIButton!
     var volumeButtonSelected = false
@@ -30,6 +30,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pcView: PCView!
     var wave = UIImageView()
     
+    var audioPlayer = AudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stopButton.hidden = true
@@ -38,7 +40,7 @@ class ViewController: UIViewController {
         self.waterSavedLabel.hidden = true
         self.shuffleButton.hidden = true
         self.background.hidden = true
-//        self.doneButton.hidden = true
+        self.doneButton.hidden = true
         
         timer.label = timerLabel
         
@@ -49,6 +51,8 @@ class ViewController: UIViewController {
         //self.view.bringSubviewToFront(pcView)
         
         setupWaves()
+        
+        audioPlayer.setup()
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -84,20 +88,20 @@ class ViewController: UIViewController {
         mainWaterController.start()
     }
     
-//    @IBAction func doneButtonTapped(sender: AnyObject) {
-//        println("done button tapped")
-//        
-//        self.stopButton.hidden = true
-//        self.timerLabel.hidden = true
-//        self.volumeButton.hidden = true
-//        self.waterSavedLabel.hidden = true
-//        self.shuffleButton.hidden = true
-//        self.background.hidden = true
-//        self.doneButton.hidden = true
-//        self.playButton.hidden = false
-//        
-//        self.timer.resetTimer()
-//    }
+    @IBAction func doneButtonTapped(sender: AnyObject) {
+        println("done button tapped")
+        
+        self.stopButton.hidden = true
+        self.timerLabel.hidden = true
+        self.volumeButton.hidden = true
+        self.waterSavedLabel.hidden = true
+        self.shuffleButton.hidden = true
+        self.background.hidden = true
+        self.doneButton.hidden = true
+        self.playButton.hidden = false
+        
+        self.timer.resetTimer()
+    }
     
     @IBAction func shuffleButtonTapped(sender: AnyObject) {
         music.shuffleMusic()
@@ -138,7 +142,8 @@ class ViewController: UIViewController {
         self.stopButton.hidden = true
         self.shuffleButton.hidden = true
         self.background.hidden = false
-//        self.doneButton.hidden = false
+        self.doneButton.hidden = false
+        self.wave.hidden = true
         
         if doubleTimeTaken < 300.0
         {
@@ -153,6 +158,8 @@ class ViewController: UIViewController {
             self.waterSavedLabel.hidden = false
         })
         mainWaterController.stop()
+        
+        audioPlayer.pause()
     }
     
     // MARK: Animation Functions
@@ -167,12 +174,12 @@ class ViewController: UIViewController {
     }
     
     func animateWave(time: NSTimeInterval) {
-        UIView.animateWithDuration(time, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+        UIView.animateWithDuration(10.0, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.wave.frame.origin.y = 0
             }, completion: {
                 (value: Bool) in
                 self.mainWaterController.stop()
-                println("STOP")
+                self.audioPlayer.playRandomFromArray()
         })
     }
     

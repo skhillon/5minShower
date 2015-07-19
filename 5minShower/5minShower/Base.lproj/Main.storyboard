@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -57,15 +57,6 @@
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zmI-qR-ijh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-O3-CQf">
-                                <rect key="frame" x="140" y="50" width="320" height="500"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="h5p-lT-qYK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="36"/>
-                                <color key="textColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY6-mX-iaY">
                                 <rect key="frame" x="512" y="541" width="62" height="44"/>
                                 <constraints>
@@ -86,6 +77,15 @@
                                     <action selector="shuffleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rff-Ax-aHC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-O3-CQf">
+                                <rect key="frame" x="140" y="275.5" width="320" height="49.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="h5p-lT-qYK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFr-yS-qYD">
                                 <rect key="frame" x="26" y="541" width="46" height="44"/>
                                 <constraints>
@@ -103,20 +103,35 @@
                                     <action selector="volumeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VbW-of-u4W"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-Yf-Dez">
+                                <rect key="frame" x="270" y="480" width="61" height="45"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJc-Tg-Blj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="d3x-yP-mv7" secondAttribute="centerX" id="4Rv-dm-BcF"/>
-                            <constraint firstItem="P4K-O3-CQf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="6bS-DL-iYx"/>
+                            <constraint firstItem="H7H-Yf-Dez" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="422" id="7ix-nc-l2z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H7H-Yf-Dez" secondAttribute="bottom" constant="75" id="8Ix-A5-hmK"/>
                             <constraint firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="94P-a3-oF8"/>
                             <constraint firstAttribute="centerY" secondItem="iED-Hq-27Y" secondAttribute="centerY" id="Hvn-Uj-uKr"/>
-                            <constraint firstAttribute="centerY" secondItem="P4K-O3-CQf" secondAttribute="centerY" id="KJ8-qH-6mA"/>
+                            <constraint firstAttribute="centerX" secondItem="H7H-Yf-Dez" secondAttribute="centerX" id="LIs-yR-LOt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ko3-nA-elr" secondAttribute="bottom" constant="15" id="PUA-cg-M3v"/>
-                            <constraint firstAttribute="centerX" secondItem="P4K-O3-CQf" secondAttribute="centerX" id="Pnm-QH-3jU"/>
+                            <constraint firstItem="P4K-O3-CQf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Swq-7S-bsj"/>
+                            <constraint firstAttribute="centerY" secondItem="P4K-O3-CQf" secondAttribute="centerY" id="ToA-tH-qz7"/>
                             <constraint firstItem="qFr-yS-qYD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="X6Z-LU-E1u"/>
                             <constraint firstItem="Wdo-Hd-8lS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="X92-MF-VgW"/>
                             <constraint firstAttribute="centerY" secondItem="d3x-yP-mv7" secondAttribute="centerY" id="cfg-hW-0nA"/>
                             <constraint firstItem="ko3-nA-elr" firstAttribute="centerY" secondItem="qFr-yS-qYD" secondAttribute="centerY" id="ght-r8-2JX"/>
+                            <constraint firstAttribute="centerX" secondItem="P4K-O3-CQf" secondAttribute="centerX" id="lhc-hh-b1R"/>
+                            <constraint firstItem="P4K-O3-CQf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="124" id="lyM-xt-1Li"/>
                             <constraint firstItem="Wdo-Hd-8lS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="nMU-5h-D5Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SY6-mX-iaY" secondAttribute="trailing" constant="10" id="osx-la-Lmf"/>
                             <constraint firstItem="ko3-nA-elr" firstAttribute="centerY" secondItem="SY6-mX-iaY" secondAttribute="centerY" id="rIE-SQ-R5O"/>
@@ -124,9 +139,16 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wdo-Hd-8lS" secondAttribute="bottom" id="vGM-Dg-VWP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wdo-Hd-8lS" secondAttribute="trailing" constant="-16" id="vyR-VE-SZQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lyM-xt-1Li"/>
+                                <exclude reference="7ix-nc-l2z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="background" destination="5ui-oo-M6e" id="r47-3a-17J"/>
+                        <outlet property="doneButton" destination="H7H-Yf-Dez" id="Nty-4v-vvQ"/>
                         <outlet property="pcView" destination="Wdo-Hd-8lS" id="GqT-Ef-SpL"/>
                         <outlet property="playButton" destination="d3x-yP-mv7" id="CPT-CZ-z5m"/>
                         <outlet property="shuffleButton" destination="SY6-mX-iaY" id="loW-79-frZ"/>

@@ -13,6 +13,15 @@
 		8F02A20B1B5ADF310036CE27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F02A20A1B5ADF310036CE27 /* Images.xcassets */; };
 		8F02A20E1B5ADF310036CE27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F02A20C1B5ADF310036CE27 /* LaunchScreen.xib */; };
 		8F02A21A1B5ADF310036CE27 /* _minShowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */; };
+		9FB35A4E1B5C391900099FEC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB35A4D1B5C391900099FEC /* AudioPlayer.swift */; };
+		9FB35A571B5C395500099FEC /* df1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A4F1B5C395500099FEC /* df1.mp3 */; };
+		9FB35A581B5C395500099FEC /* df2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A501B5C395500099FEC /* df2.mp3 */; };
+		9FB35A591B5C395500099FEC /* df3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A511B5C395500099FEC /* df3.mp3 */; };
+		9FB35A5A1B5C395500099FEC /* df4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A521B5C395500099FEC /* df4.mp3 */; };
+		9FB35A5B1B5C395500099FEC /* df5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A531B5C395500099FEC /* df5.mp3 */; };
+		9FB35A5C1B5C395500099FEC /* df6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A541B5C395500099FEC /* df6.mp3 */; };
+		9FB35A5D1B5C395500099FEC /* df7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A551B5C395500099FEC /* df7.mp3 */; };
+		9FB35A5E1B5C395500099FEC /* df8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A561B5C395500099FEC /* df8.mp3 */; };
 		9FE432471B5C050300630D93 /* WaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE432461B5C050300630D93 /* WaterController.swift */; };
 		9FE432491B5C050900630D93 /* PCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE432481B5C050900630D93 /* PCView.swift */; };
 		9FE4324B1B5C050E00630D93 /* MyStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4324A1B5C050E00630D93 /* MyStyleKit.swift */; };
@@ -42,6 +51,15 @@
 		8F02A2131B5ADF310036CE27 /* 5minShowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 5minShowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F02A2181B5ADF310036CE27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _minShowerTests.swift; sourceTree = "<group>"; };
+		9FB35A4D1B5C391900099FEC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		9FB35A4F1B5C395500099FEC /* df1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df1.mp3; sourceTree = "<group>"; };
+		9FB35A501B5C395500099FEC /* df2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df2.mp3; sourceTree = "<group>"; };
+		9FB35A511B5C395500099FEC /* df3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df3.mp3; sourceTree = "<group>"; };
+		9FB35A521B5C395500099FEC /* df4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df4.mp3; sourceTree = "<group>"; };
+		9FB35A531B5C395500099FEC /* df5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df5.mp3; sourceTree = "<group>"; };
+		9FB35A541B5C395500099FEC /* df6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df6.mp3; sourceTree = "<group>"; };
+		9FB35A551B5C395500099FEC /* df7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df7.mp3; sourceTree = "<group>"; };
+		9FB35A561B5C395500099FEC /* df8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df8.mp3; sourceTree = "<group>"; };
 		9FE432461B5C050300630D93 /* WaterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterController.swift; sourceTree = "<group>"; };
 		9FE432481B5C050900630D93 /* PCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PCView.swift; sourceTree = "<group>"; };
 		9FE4324A1B5C050E00630D93 /* MyStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStyleKit.swift; sourceTree = "<group>"; };
@@ -92,6 +110,7 @@
 				E5CEA4701B5C208F0093100E /* SIMPLIFICA Typeface.ttf */,
 				8F02A2031B5ADF310036CE27 /* AppDelegate.swift */,
 				8F02A2051B5ADF310036CE27 /* ViewController.swift */,
+				9FB35A4D1B5C391900099FEC /* AudioPlayer.swift */,
 				9FE4324A1B5C050E00630D93 /* MyStyleKit.swift */,
 				9FE432481B5C050900630D93 /* PCView.swift */,
 				9FE432461B5C050300630D93 /* WaterController.swift */,
@@ -108,6 +127,14 @@
 		8F02A2011B5ADF310036CE27 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9FB35A4F1B5C395500099FEC /* df1.mp3 */,
+				9FB35A501B5C395500099FEC /* df2.mp3 */,
+				9FB35A511B5C395500099FEC /* df3.mp3 */,
+				9FB35A521B5C395500099FEC /* df4.mp3 */,
+				9FB35A531B5C395500099FEC /* df5.mp3 */,
+				9FB35A541B5C395500099FEC /* df6.mp3 */,
+				9FB35A551B5C395500099FEC /* df7.mp3 */,
+				9FB35A561B5C395500099FEC /* df8.mp3 */,
 				8F02A2021B5ADF310036CE27 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -213,6 +240,14 @@
 				8F02A2091B5ADF310036CE27 /* Main.storyboard in Resources */,
 				E5CEA4711B5C208F0093100E /* SIMPLIFICA Typeface.ttf in Resources */,
 				8F02A20E1B5ADF310036CE27 /* LaunchScreen.xib in Resources */,
+				9FB35A5E1B5C395500099FEC /* df8.mp3 in Resources */,
+				9FB35A5C1B5C395500099FEC /* df6.mp3 in Resources */,
+				9FB35A5A1B5C395500099FEC /* df4.mp3 in Resources */,
+				9FB35A581B5C395500099FEC /* df2.mp3 in Resources */,
+				9FB35A571B5C395500099FEC /* df1.mp3 in Resources */,
+				9FB35A5D1B5C395500099FEC /* df7.mp3 in Resources */,
+				9FB35A5B1B5C395500099FEC /* df5.mp3 in Resources */,
+				9FB35A591B5C395500099FEC /* df3.mp3 in Resources */,
 				8F02A20B1B5ADF310036CE27 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +269,7 @@
 				8F02A2061B5ADF310036CE27 /* ViewController.swift in Sources */,
 				8F02A2041B5ADF310036CE27 /* AppDelegate.swift in Sources */,
 				9FE4324B1B5C050E00630D93 /* MyStyleKit.swift in Sources */,
+				9FB35A4E1B5C391900099FEC /* AudioPlayer.swift in Sources */,
 				CB7094891B5B5EA900C6165D /* TimerController.swift in Sources */,
 				CBBB83901B5B7FD100CB8A46 /* Music.swift in Sources */,
 				9FE432471B5C050300630D93 /* WaterController.swift in Sources */,

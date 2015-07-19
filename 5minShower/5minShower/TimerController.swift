@@ -20,7 +20,7 @@ class TimerController: NSObject {
     var strSeconds = "00"
     var strFraction = "00"
     
-    var totalTime: NSTimeInterval = 300
+    var totalTime: NSTimeInterval = 10
     
     // Properties of actual values
     var hours = 0
