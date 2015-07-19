@@ -9,23 +9,32 @@
 import UIKit
 import MediaPlayer
 
-
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    notificationCenter = NSNotificationCenter()
     
-    notificationCenter.addObserver ( self )
+    let myMusicPlayer = MPMusicPlayerController()
+    let myMediaQuery = MPMediaQuery()
     
+    @IBAction func playButtonTapped(sender: AnyObject) {
+        myMusicPlayer.setQueueWithQuery(myMediaQuery)
+        myMusicPlayer.play()
+    }
+    
+    @IBAction func pauseButtonTapped(sender: AnyObject) {
+        stop()
+    }
+    
+    func stop ()
+    {
+        myMusicPlayer.pause()
+    }
 }
-
-
