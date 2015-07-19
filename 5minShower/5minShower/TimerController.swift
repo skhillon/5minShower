@@ -74,7 +74,7 @@ class TimerController: NSObject {
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
         strHours = String(format: "%02d", hours)
-        strMinutes = String(format: "%02d", minutes)
+        strMinutes = String(format: "%01d", minutes)
         strSeconds = String(format: "%02d", seconds)
         strFraction = String(format: "%02d", fraction)
         
