@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     var intervalToTakeShower = NSTimeInterval()
     
-    @IBOutlet weak var ranBut: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var volumeButton: UIButton!
     var volumeButtonSelected = false
@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         self.waterSavedLabel.hidden = true
         self.shuffleButton.hidden = true
         self.background.hidden = true
+        self.doneButton.hidden = true
         
         timer.label = timerLabel
         
@@ -49,10 +50,7 @@ class ViewController: UIViewController {
         
         setupWaves()
     }
-    
-    @IBAction func anyButPressed(sender: AnyObject) {
-        println("hi")
-    }
+
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -84,6 +82,18 @@ class ViewController: UIViewController {
         let timeInterval = NSTimeInterval (300)
         animateWave(timeInterval)
         mainWaterController.start()
+    }
+    
+    @IBAction func doneButtonTapped(sender: AnyObject) {
+        self.stopButton.hidden = true
+        self.timerLabel.hidden = true
+        self.volumeButton.hidden = true
+        self.waterSavedLabel.hidden = true
+        self.shuffleButton.hidden = true
+        self.background.hidden = true
+        self.doneButton.hidden = true
+        
+        self.timer.resetTimer()
     }
     
     @IBAction func shuffleButtonTapped(sender: AnyObject) {
@@ -125,6 +135,7 @@ class ViewController: UIViewController {
         self.stopButton.hidden = true
         self.shuffleButton.hidden = true
         self.background.hidden = false
+        self.doneButton.hidden = false
         
         if doubleTimeTaken < 300.0
         {
@@ -133,7 +144,7 @@ class ViewController: UIViewController {
         
         else
         {
-            self.waterSavedLabel.text = "You went over the goal by \(gallonsSaved * -1). We know you can do better!"
+            self.waterSavedLabel.text = "You went over the goal by \(gallonsSaved * -1) gallons. We know you can do better!"
         }
         UIView.animateWithDuration(3.0, animations: {
             self.waterSavedLabel.hidden = false

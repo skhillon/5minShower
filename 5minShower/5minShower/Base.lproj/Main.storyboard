@@ -103,14 +103,28 @@
                                     <action selector="volumeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VbW-of-u4W"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-Yf-Dez">
+                                <rect key="frame" x="270" y="442" width="61" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WJc-Tg-Blj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="d3x-yP-mv7" secondAttribute="centerX" id="4Rv-dm-BcF"/>
+                            <constraint firstItem="H7H-Yf-Dez" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="422" id="7ix-nc-l2z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H7H-Yf-Dez" secondAttribute="bottom" constant="128" id="8Ix-A5-hmK"/>
                             <constraint firstItem="P4K-O3-CQf" firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="8bq-Jb-5Pm"/>
                             <constraint firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="94P-a3-oF8"/>
                             <constraint firstAttribute="centerY" secondItem="iED-Hq-27Y" secondAttribute="centerY" id="Hvn-Uj-uKr"/>
                             <constraint firstItem="P4K-O3-CQf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="KTd-it-8tV"/>
+                            <constraint firstAttribute="centerX" secondItem="H7H-Yf-Dez" secondAttribute="centerX" id="LIs-yR-LOt"/>
                             <constraint firstItem="P4K-O3-CQf" firstAttribute="centerY" secondItem="iED-Hq-27Y" secondAttribute="centerY" id="M2X-dO-bC8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ko3-nA-elr" secondAttribute="bottom" constant="15" id="PUA-cg-M3v"/>
                             <constraint firstItem="qFr-yS-qYD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="X6Z-LU-E1u"/>
@@ -129,6 +143,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="5ui-oo-M6e" id="r47-3a-17J"/>
+                        <outlet property="doneButton" destination="H7H-Yf-Dez" id="Nty-4v-vvQ"/>
                         <outlet property="pcView" destination="Wdo-Hd-8lS" id="GqT-Ef-SpL"/>
                         <outlet property="playButton" destination="d3x-yP-mv7" id="CPT-CZ-z5m"/>
                         <outlet property="shuffleButton" destination="SY6-mX-iaY" id="loW-79-frZ"/>
