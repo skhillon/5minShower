@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import Foundation
 
 
 class ViewController: UIViewController {
@@ -22,11 +23,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var musicQuery: MPMediaQuery!
-    var musicPlayer = MPMusicPlayerController()
+//    var notificationCenter: NSNotificationCenter = defaultCenter()
+//    
+//    notificationCenter.addObserver = self
+//    notificationCenter.selector(handle_NowPlayingItemChanged)
     
-    musicQuery = musicQuery.songsQuery()
-    musicPlayer.setQueueWithQuery( _ query: musicQuery )
-    musicPlayer.play()
+    var appMusicPlayer: MPMusicPlayerController = MPMusicPlayerController.applicationMusicPlayer()
+
+    enum MPMusicShuffleMode : Int {
+        case Default
+        case Off
+        case Songs
+        case Albums
+    }
+    
+    appMusicPlayer = MPMusicShuffleMode.Songs
+   
+    
 }
+
+
+
 
