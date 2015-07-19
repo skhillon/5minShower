@@ -15,6 +15,7 @@
 		8F02A21A1B5ADF310036CE27 /* _minShowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */; };
 		CB7094891B5B5EA900C6165D /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7094881B5B5EA900C6165D /* TimerController.swift */; };
 		CBBB83901B5B7FD100CB8A46 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB838F1B5B7FD100CB8A46 /* Music.swift */; };
+		E5CEA4671B5C04FA0093100E /* SIMPLIFICA Typeface.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E5CEA4641B5C04FA0093100E /* SIMPLIFICA Typeface.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _minShowerTests.swift; sourceTree = "<group>"; };
 		CB7094881B5B5EA900C6165D /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		CBBB838F1B5B7FD100CB8A46 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		E5CEA4641B5C04FA0093100E /* SIMPLIFICA Typeface.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SIMPLIFICA Typeface.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		8F02A2001B5ADF310036CE27 /* 5minShower */ = {
 			isa = PBXGroup;
 			children = (
+				E5CEA4611B5C04FA0093100E /* SIMPLIFICA */,
 				8F02A2031B5ADF310036CE27 /* AppDelegate.swift */,
 				8F02A2051B5ADF310036CE27 /* ViewController.swift */,
 				CBBB838F1B5B7FD100CB8A46 /* Music.swift */,
@@ -116,6 +119,15 @@
 				8F02A2181B5ADF310036CE27 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5CEA4611B5C04FA0093100E /* SIMPLIFICA */ = {
+			isa = PBXGroup;
+			children = (
+				E5CEA4641B5C04FA0093100E /* SIMPLIFICA Typeface.ttf */,
+			);
+			name = SIMPLIFICA;
+			path = ../../../../Downloads/SIMPLIFICA;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +212,7 @@
 			files = (
 				8F02A2091B5ADF310036CE27 /* Main.storyboard in Resources */,
 				8F02A20E1B5ADF310036CE27 /* LaunchScreen.xib in Resources */,
+				E5CEA4671B5C04FA0093100E /* SIMPLIFICA Typeface.ttf in Resources */,
 				8F02A20B1B5ADF310036CE27 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
