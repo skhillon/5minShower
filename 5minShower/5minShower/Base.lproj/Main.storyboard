@@ -54,10 +54,18 @@
                                     <action selector="volumeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VbW-of-u4W"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-O3-CQf">
+                                <rect key="frame" x="257" y="190" width="86" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="P4K-O3-CQf" secondAttribute="centerX" id="1ja-og-fJN"/>
                             <constraint firstItem="ko3-nA-elr" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="188" id="2YC-iL-wuz"/>
+                            <constraint firstItem="P4K-O3-CQf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="170" id="7iL-Ul-1fd"/>
                             <constraint firstItem="qFr-yS-qYD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="APD-Gb-bWm"/>
                             <constraint firstAttribute="centerX" secondItem="d3x-yP-mv7" secondAttribute="centerX" id="EKO-aI-H1L"/>
                             <constraint firstAttribute="centerY" secondItem="d3x-yP-mv7" secondAttribute="centerY" id="ZEG-RQ-qpw"/>
@@ -65,13 +73,20 @@
                             <constraint firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="kbT-aF-8Qw"/>
                             <constraint firstAttribute="centerX" secondItem="ko3-nA-elr" secondAttribute="centerX" id="qtf-jd-QOh"/>
                             <constraint firstItem="qFr-yS-qYD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vNS-6j-v5R"/>
+                            <constraint firstItem="P4K-O3-CQf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="y0I-SU-mGP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="y0I-SU-mGP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="d3x-yP-mv7" id="CPT-CZ-z5m"/>
                         <outlet property="stopButton" destination="ko3-nA-elr" id="b9D-Ma-kXa"/>
                         <outlet property="timerLabel" destination="iED-Hq-27Y" id="ZwW-Au-TFU"/>
                         <outlet property="volumeButton" destination="qFr-yS-qYD" id="OvI-kR-fK0"/>
+                        <outlet property="waterSavedLabel" destination="P4K-O3-CQf" id="gd9-yj-Zx8"/>
                     </connections>
                 </viewController>
             </objects>

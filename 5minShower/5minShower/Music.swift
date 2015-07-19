@@ -43,6 +43,7 @@ class Music: NSObject {
     func playMusic ()
     {
         myMusicPlayer.setQueueWithQuery(myMediaQuery)
+        myMusicPlayer.shuffleMode = MPMusicShuffleMode (rawValue: 3)! 
         myMusicPlayer.play()
     }
     
