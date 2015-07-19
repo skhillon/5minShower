@@ -11,10 +11,20 @@ import MediaPlayer
 
 class ViewController: UIViewController {
     
+    var timer = TimerController()
+    
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    //@IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stopButton.hidden = true
         self.stopButton.alpha = 0
+        
+        timer.label = timerLabel
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -22,10 +32,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var stopButton: UIButton!
-    
     
     let myMusicPlayer = MPMusicPlayerController()
     let myMediaQuery = MPMediaQuery()
@@ -40,6 +46,8 @@ class ViewController: UIViewController {
             self.stopButton.hidden = false
         })
         self.playButton.hidden = true
+        
+        timer.start()
     }
     
     @IBAction func stopButtonTapped(sender: AnyObject) {
@@ -49,6 +57,7 @@ class ViewController: UIViewController {
     func stop ()
     {
         myMusicPlayer.pause()
+        timer.stop()
     }
     
 }
