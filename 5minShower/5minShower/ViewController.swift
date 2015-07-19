@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     var intervalToTakeShower = NSTimeInterval()
     
-    @IBOutlet weak var doneButton: UIButton!
+//    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var volumeButton: UIButton!
     var volumeButtonSelected = false
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         self.waterSavedLabel.hidden = true
         self.shuffleButton.hidden = true
         self.background.hidden = true
-        self.doneButton.hidden = true
+//        self.doneButton.hidden = true
         
         timer.label = timerLabel
         
@@ -84,20 +84,20 @@ class ViewController: UIViewController {
         mainWaterController.start()
     }
     
-    @IBAction func doneButtonTapped(sender: AnyObject) {
-        println("done button tapped")
-        
-        self.stopButton.hidden = true
-        self.timerLabel.hidden = true
-        self.volumeButton.hidden = true
-        self.waterSavedLabel.hidden = true
-        self.shuffleButton.hidden = true
-        self.background.hidden = true
-        self.doneButton.hidden = true
-        self.playButton.hidden = false
-        
-        self.timer.resetTimer()
-    }
+//    @IBAction func doneButtonTapped(sender: AnyObject) {
+//        println("done button tapped")
+//        
+//        self.stopButton.hidden = true
+//        self.timerLabel.hidden = true
+//        self.volumeButton.hidden = true
+//        self.waterSavedLabel.hidden = true
+//        self.shuffleButton.hidden = true
+//        self.background.hidden = true
+//        self.doneButton.hidden = true
+//        self.playButton.hidden = false
+//        
+//        self.timer.resetTimer()
+//    }
     
     @IBAction func shuffleButtonTapped(sender: AnyObject) {
         music.shuffleMusic()
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
         self.stopButton.hidden = true
         self.shuffleButton.hidden = true
         self.background.hidden = false
-        self.doneButton.hidden = false
+//        self.doneButton.hidden = false
         
         if doubleTimeTaken < 300.0
         {
