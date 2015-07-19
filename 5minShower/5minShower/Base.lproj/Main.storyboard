@@ -22,28 +22,33 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZLV-RF-qc1"/>
+                                    <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CKU-5x-Jsq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko3-nA-elr">
-                                <rect key="frame" x="279" y="323" width="43" height="30"/>
-                                <state key="normal" title="Pause">
+                                <rect key="frame" x="284" y="503" width="33" height="30"/>
+                                <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pauseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VBx-B3-ikQ"/>
                                     <action selector="playButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wo9-H5-2G9"/>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfM-nR-gCi"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ko3-nA-elr" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="188" id="2YC-iL-wuz"/>
                             <constraint firstAttribute="centerX" secondItem="d3x-yP-mv7" secondAttribute="centerX" id="EKO-aI-H1L"/>
                             <constraint firstAttribute="centerY" secondItem="d3x-yP-mv7" secondAttribute="centerY" id="ZEG-RQ-qpw"/>
                             <constraint firstAttribute="centerX" secondItem="ko3-nA-elr" secondAttribute="centerX" id="qtf-jd-QOh"/>
-                            <constraint firstItem="ko3-nA-elr" firstAttribute="top" secondItem="d3x-yP-mv7" secondAttribute="bottom" constant="8" id="y6V-pj-Ki9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="d3x-yP-mv7" id="sU6-JP-egi"/>
+                        <outlet property="stopButton" destination="ko3-nA-elr" id="GI9-Ss-Jsg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
