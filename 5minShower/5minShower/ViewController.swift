@@ -81,7 +81,8 @@ class ViewController: UIViewController {
         timer.start()
         
         // Animaion start code
-        animateWave(NSTimeInterval(60 * 5))
+        let timeInterval = NSTimeInterval (300)
+        animateWave(timeInterval)
         mainWaterController.start()
     }
     
@@ -153,7 +154,7 @@ class ViewController: UIViewController {
     
     func animateWave(time: NSTimeInterval) {
         UIView.animateWithDuration(time, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
-            self.wave.frame.origin.y = -0.02 * self.wave.frame.height
+            self.wave.frame.origin.y = 0
             }, completion: {
                 (value: Bool) in
                 self.mainWaterController.stop()

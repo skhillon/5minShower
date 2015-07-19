@@ -45,6 +45,7 @@ class TimerController: NSObject {
         var timeLeft = totalTime - elapsedTime
         
         if timeLeft <= 0 {
+            println("timer up")
             
             self.stop()
         }

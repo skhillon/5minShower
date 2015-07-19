@@ -18,7 +18,7 @@ class WaterController: NSObject {
     var startY = CGFloat(175)
     var distanceBetweenEachDrop = CGFloat(18)
     var distanceBetweenSameRow = CGFloat(50)
-    var dropColor = UIColor(red:0.31, green:0.51, blue:0.53, alpha:1.0)
+    var dropColor = UIColor(red:0.56, green:0.76, blue:0.85, alpha:1.0)
     var gravityBehavior = UIGravityBehavior()
     var showerView = UIView()
     
