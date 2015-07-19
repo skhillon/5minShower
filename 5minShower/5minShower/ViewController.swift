@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet var waterSavedLabel: UILabel!
+    @IBOutlet weak var waterSavedLabel: UILabel!
+    @IBOutlet var shuffleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
         self.timerLabel.hidden = true
         self.volumeButton.hidden = true
         self.waterSavedLabel.hidden = true
+        self.shuffleButton.hidden = true
         
         timer.label = timerLabel
         
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playButtonTapped(sender: AnyObject) {
+        music.shuffleMusic()
         music.playMusic()
         UIView.animateWithDuration(2.0, animations: {
             self.playButton.alpha = 0
@@ -53,13 +56,19 @@ class ViewController: UIViewController {
             self.timerLabel.alpha = 1
             self.stopButton.hidden = false
             self.timerLabel.hidden = false
+            self.shuffleButton.hidden = false
+            
         })
         self.playButton.hidden = true
         self.volumeButton.hidden = false
-                    
+        
         timer.start()
     }
     
+    @IBAction func shuffleButtonTapped(sender: AnyObject) {
+        music.shuffleMusic()
+        music.playMusic()
+    }
     @IBAction func volumeButtonTapped(sender: AnyObject) {
         self.volumeButton.selected = !volumeButtonSelected
         volumeButtonSelected = !volumeButtonSelected
@@ -81,13 +90,14 @@ class ViewController: UIViewController {
         let doubleTimeTaken = (Double)(timeTaken)
     
         timer.stop()
-        let gallonsSaved = (Int)(2.1 * (5 - doubleTimeTaken))
+        let gallonsSaved = (Int)(2.1 * (300 - doubleTimeTaken) / 60 )
         
         self.volumeButton.hidden = true
         self.timerLabel.hidden = true
         self.stopButton.hidden = true
+        self.shuffleButton.hidden = true
         
-        if doubleTimeTaken < 5.0
+        if doubleTimeTaken < 300.0
         {
             self.waterSavedLabel.text = "Congratulations! You saved \(gallonsSaved) extra gallons!"
         }
