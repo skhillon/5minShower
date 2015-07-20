@@ -79,7 +79,10 @@ class ViewController: UIViewController {
             self.timerLabel.alpha = 1
             self.stopButton.hidden = false
             self.timerLabel.hidden = false
+            self.volumeButton.hidden = false
+            self.volumeButton.alpha = 1
             self.shuffleButton.hidden = false
+            self.shuffleButton.alpha = 1
             
         })
         self.playButton.hidden = true
