@@ -84,27 +84,19 @@ class ViewController: UIViewController {
         })
         self.playButton.hidden = true
         self.volumeButton.hidden = false
+        self.timerLabel.textColor = UIColor.blackColor()
         
         timer.start()
         
         // Animaion start code
         let timeInterval = NSTimeInterval(300)
         mainWaterController.start()
+        
+        setupWaves()
     }
     
     @IBAction func doneButtonTapped(sender: AnyObject) {
-        println("done button tapped")
-        
-        self.stopButton.hidden = true
-        self.timerLabel.hidden = true
-        self.volumeButton.hidden = true
-        self.waterSavedLabel.hidden = true
-        self.shuffleButton.hidden = true
-        self.background.hidden = true
-        self.doneButton.hidden = true
-        self.playButton.hidden = false
-        
-        self.timer.resetTimer()
+        resetView()
     }
     
     @IBAction func shuffleButtonTapped(sender: AnyObject) {
@@ -182,6 +174,9 @@ class ViewController: UIViewController {
         var width = self.view.frame.width * 2.5
         var frame = CGRectMake(-10, self.view.frame.height, width, width * 0.8505)
         wave.frame = frame
+        wave.removeFromSuperview()
+        wave.alpha = 1
+        wave.hidden = false
         self.view.addSubview(wave)
         self.view.sendSubviewToBack(wave)
     }
@@ -200,6 +195,24 @@ class ViewController: UIViewController {
                     self.shuffleButton.hidden = true
             })
         }
+    }
+    
+    func resetView() {
+        println("done button tapped")
+        
+        self.playButton.alpha = 1
+        self.playButton.hidden = false
+        self.stopButton.hidden = true
+        self.timerLabel.hidden = true
+        self.volumeButton.hidden = true
+        self.waterSavedLabel.hidden = true
+        self.shuffleButton.hidden = true
+        self.background.hidden = true
+        self.doneButton.hidden = true
+        self.playButton.hidden = false
+        
+        self.timer.resetTimer()
+        timer.isComplete = false
     }
     
 }
