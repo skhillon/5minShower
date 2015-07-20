@@ -9,24 +9,26 @@
 import UIKit
 
 class PCView: UIView {
-
+    
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
-        var width = self.frame.width * 0.55
-        //0.77551156435
-        //0.82870092648
+        // Drawing code for showerhead
+        
+        var frameWidth = self.frame.width
+        
+        //width of showerhead. Streches right side of ShowerHead
+        var width = frameWidth * 0.48
+        //height of showerhead. Streches bottom side of ShowerHead
         var height = 0.77666666666 * width
         
-        var x = self.frame.width/2 - width/2 + (1/8.9) * self.frame.width
-        var y = self.frame.height * 0.04
+        //Origin of showerhead (at top left)
+        var x = frameWidth/2 - width/2 + (1/8.6) * frameWidth
+        var y = frameWidth * 0.05
+        
+        //draw showerhead
         MyStyleKit.drawShower(frame: CGRectMake(x, y, width, height))
         
-//        var rectangle = UIView()
-//        rectangle.frame = CGRectMake(self.frame.width/2, y, 10, 100)
-//        rectangle.backgroundColor = UIColor.blackColor()
-//        self.addSubview(rectangle)
     }
-
+    
 }

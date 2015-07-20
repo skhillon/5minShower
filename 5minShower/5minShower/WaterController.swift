@@ -14,46 +14,56 @@ class WaterController: NSObject {
     var view: UIView = UIView()
     var animator = UIDynamicAnimator()
     var drops: [UIView] = []
+    
+    //create var for start pos of rain (startX,startY), and distances between drops w/ meaningless values
     var startX = CGFloat(100)
     var startY = CGFloat(175)
     var distanceBetweenEachDrop = CGFloat(18)
     var distanceBetweenSameRow = CGFloat(50)
+    
+    //create light blue color for rain drops
     var dropColor = UIColor(red:0.56, green:0.76, blue:0.85, alpha:1.0)
+    //initialize the gravity object and UIView
     var gravityBehavior = UIGravityBehavior()
     var showerView = UIView()
-    
+    //creat vars for timers for the 2 rows of rain drops
     var timer1 = NSTimer()
     var timer2 = NSTimer()
     
     func start() {
         // Setup the class
-        timer1 = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "spawnFirst", userInfo: nil, repeats: true)
-        var tempTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "startSecond", userInfo: nil, repeats: false)
+        
+        //var for screen width
+        var width = self.view.frame.width
+        
+        // Initialize Values for Position of raindrops and space between them
+        startX = CGFloat(width * 0.425)
+        startY = CGFloat(width * 0.23)
+        distanceBetweenEachDrop = width * 0.048
+        distanceBetweenSameRow = distanceBetweenEachDrop * 2
         
         // Initialize animator
         self.animator = UIDynamicAnimator(referenceView: self.view)
         gravityBehavior.gravityDirection.dy = 1
         self.animator.addBehavior(gravityBehavior)
         
-        // Initialize Values
-        distanceBetweenEachDrop = self.view.frame.width * 0.048
-        var width = self.view.frame.width * 0.5
-        var x = self.view.frame.width/2 - width/2 + (1/8.9) * self.view.frame.width
-        distanceBetweenSameRow = distanceBetweenEachDrop * 2
-        startX = CGFloat(x + self.view.frame.width/26)
-        var height = 0.56 * width
-        startY = CGFloat(height)
+        //timer that calls spawnFirst method every 0.2 second. Produces rain drops every .2 second in 1st and 2rd row
+        timer1 = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "spawnFirst", userInfo: nil, repeats: true)
+        //timer that calls startSecond method then waits .1 seconds. Creates a slight delay for 2nd and 4th rows
+        var tempTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "startSecond", userInfo: nil, repeats: false)
     }
     
     func startSecond() {
+        //calls spawnSecond method every .2 seconds. Produces rain drops every .2 seconds
         timer2 = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "spawnSecond", userInfo: nil, repeats: true)
     }
     
     func addGravity(array: [UIView]) {
+        //adds gravity to every drop in array
         for drop in array {
             gravityBehavior.addItem(drop)
         }
-
+        //Checks if each drop is below the bottom of screen. Then removes its gravity, hides it, and removes from array
         for var i = 0; i < drops.count; i++ {
             if drops[i].frame.origin.y > self.view.frame.height {
                 gravityBehavior.removeItem(drops[i])
@@ -63,23 +73,31 @@ class WaterController: NSObject {
         }
     }
     
+    //produces the 1st and 3rd columns of drops
     func spawnFirst() {
+        //creates array of UIViews (drops)
         var thisArray: [UIView]? = []
+        //number of col of drops
         var numberOfDrops = 2
-        
+        //for each drop in a row
         for (var i = 0; i < numberOfDrops; i++) {
+            //create a UIView (a drop). Then set the size, color, and remove border of drop
             var drop = UIView()
             drop.frame = CGRectMake(startX + CGFloat(i) * distanceBetweenSameRow, startY, 1.0, 50.0)
             drop.backgroundColor = dropColor
             drop.layer.borderWidth = 0.0
+            //add the drop to main view
             self.view.insertSubview(drop, belowSubview: showerView)
+            //add the drop to the drops array
             self.drops.append(drop)
+            //add the drop to thisArray
             thisArray!.append(drop)
         }
-        
+        //adds gravity to the drops that were just created
         addGravity(thisArray!)
     }
     
+    //produces the 2nd and 4th columns of drops. Same code as spawnFirst. Runs .1 after spawnFirst.
     func spawnSecond() {
         var thisArray: [UIView] = []
         var numberOfDrops = 2
@@ -100,7 +118,9 @@ class WaterController: NSObject {
     }
     
     func stop() {
+        //removes all objects from drops array
         drops = []
+        //stops the 2 timers from spawning drops.
         timer1.invalidate()
         timer2.invalidate()
     }
