@@ -24,7 +24,7 @@ class TimerController: NSObject {
     var strFraction = "00"
     var isComplete = false
     
-    var totalTime: NSTimeInterval = 300
+    var totalTime: NSTimeInterval = 10
     
     // Properties of actual values
     var hours = 0
@@ -48,7 +48,7 @@ class TimerController: NSObject {
         
         var timeLeft = totalTime - elapsedTime
         
-        if timeLeft <= 0 {
+        if timeLeft <= 0 && isComplete == false {
             audioPlayer.playRandomFromArray()
             label.textColor = UIColor(red:0.86, green:0.27, blue:0.27, alpha:1.0)
             isComplete = true
@@ -144,20 +144,20 @@ class TimerController: NSObject {
         //Find the difference between current time and start time.
         var elapsedTime: NSTimeInterval = currentTime - startTime
         //Set the elapsed time to the amount of time left in the timer
-        var timeLeft = totalTime - elapsedTime
-        return timeLeft
+        var timeLeft2 = totalTime - elapsedTime
+        return timeLeft2
     }
     
     func getTimeComplete() -> NSTimeInterval {
-        var timeLeft = getTimeLeft()
-        var timeComplete = totalTime - timeLeft
+        var timeLeft2 = getTimeLeft()
+        var timeComplete = totalTime - timeLeft2
         
         return timeComplete
     }
     
     func getPercentageCompleted() -> Double {
-        var timeLeft = getTimeLeft()
-        var timeComplete = totalTime - timeLeft
+        var timeLeft2 = getTimeLeft()
+        var timeComplete = totalTime - timeLeft2
         var percent = (timeComplete/totalTime)
         
         return percent

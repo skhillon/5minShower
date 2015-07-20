@@ -16,6 +16,7 @@ class AudioPlayer {
     var started = false
     
     func playRandomFromArray() {
+        println("JHJKLKJHJ")
         var index = Int(arc4random_uniform(UInt32(audioArray.count)))
         var currentURL = audioArray[index]
         self.play(currentURL)
