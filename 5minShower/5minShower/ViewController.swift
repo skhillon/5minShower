@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var waterSavedLabel: UILabel!
     @IBOutlet var shuffleButton: UIButton!
     
+    var waveTimer = NSTimer()
+    
     // Animation vars
     var mainWaterController = WaterController()
     @IBOutlet weak var pcView: PCView!
@@ -45,7 +47,6 @@ class ViewController: UIViewController {
         timer.label = timerLabel
         timer.audioPlayer = audioPlayer
         
-        
         // Setup Animations
         mainWaterController.view = self.view
         mainWaterController.showerView = pcView
@@ -54,6 +55,9 @@ class ViewController: UIViewController {
         setupWaves()
         
         audioPlayer.setup()
+        
+        waveTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "animateWave", userInfo: nil, repeats: true)
+
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -85,7 +89,6 @@ class ViewController: UIViewController {
         
         // Animaion start code
         let timeInterval = NSTimeInterval(300)
-        animateWave(timeInterval)
         mainWaterController.start()
     }
     
@@ -127,9 +130,13 @@ class ViewController: UIViewController {
         
         let timeTaken = timer.getTimeComplete()
         let doubleTimeTaken = (Double)(timeTaken)
-    
         timer.stop()
         let gallonsSaved = (Int)(2.1 * (300 - doubleTimeTaken) / 60 )
+        
+        var waterSavedLabelText = "Congratulations! You saved \(gallonsSaved) extra gallons!"
+        if timer.isComplete {
+            waterSavedLabelText = "Wow. You went over 5 minutes and wasted a lot of water!"
+        }
         
         UIView.animateWithDuration(2.0, animations: {
             self.volumeButton.alpha = 0
@@ -148,7 +155,7 @@ class ViewController: UIViewController {
         
         if doubleTimeTaken < 300.0
         {
-            self.waterSavedLabel.text = "Congratulations! You saved \(gallonsSaved) extra gallons!"
+            self.waterSavedLabel.text = waterSavedLabelText
         }
         
         else
@@ -174,13 +181,11 @@ class ViewController: UIViewController {
         self.view.sendSubviewToBack(wave)
     }
     
-    func animateWave(time: NSTimeInterval) {
-        UIView.animateWithDuration(time, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
-            self.wave.frame.origin.y = 0
-            }, completion: {
-                (value: Bool) in
-                self.mainWaterController.stop()
-        })
+    func animateWave() {
+        // Move the wave based on the timer percentage completed
+        if (timer.getPercentageCompleted() <= 1) {
+            self.wave.frame.origin.y = CGFloat(1.0 - timer.getPercentageCompleted()) * self.view.frame.height
+        }
     }
     
 }

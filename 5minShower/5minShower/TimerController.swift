@@ -22,6 +22,7 @@ class TimerController: NSObject {
     var strMinutes = "0"
     var strSeconds = "00"
     var strFraction = "00"
+    var isComplete = false
     
     var totalTime: NSTimeInterval = 300
     
@@ -49,7 +50,8 @@ class TimerController: NSObject {
         
         if timeLeft <= 0 {
             audioPlayer.playRandomFromArray()
-            self.stop()
+            label.textColor = UIColor(red:0.86, green:0.27, blue:0.27, alpha:1.0)
+            isComplete = true
         }
         
         //calculate the hours in elapsed time.
@@ -61,12 +63,20 @@ class TimerController: NSObject {
         //calculate the minutes in elapsed time.
         
         minutes = Int(timeLeft / 60.0)
+        var minutesLabel = minutes
+        if minutesLabel < 0 {
+            minutesLabel *= -1
+        }
         
         timeLeft -= (NSTimeInterval(minutes) * 60)
         
         //calculate the seconds in elapsed time.
         
         seconds = Int(timeLeft)
+        var secondsLabel = seconds
+        if secondsLabel < 0 {
+            secondsLabel *= -1
+        }
         
         timeLeft -= NSTimeInterval(seconds)
         
@@ -76,10 +86,8 @@ class TimerController: NSObject {
         
         //add the leading zero for minutes, seconds and millseconds and store them as string constants
         
-        strHours = String(format: "%02d", hours)
-        strMinutes = String(format: "%01d", minutes)
-        strSeconds = String(format: "%02d", seconds)
-        strFraction = String(format: "%02d", fraction)
+        strMinutes = String(format: "%01d", minutesLabel)
+        strSeconds = String(format: "%02d", secondsLabel)
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         
@@ -143,13 +151,14 @@ class TimerController: NSObject {
     func getTimeComplete() -> NSTimeInterval {
         var timeLeft = getTimeLeft()
         var timeComplete = totalTime - timeLeft
+        
         return timeComplete
     }
     
-    func getPercentageCompleted() -> Int {
+    func getPercentageCompleted() -> Double {
         var timeLeft = getTimeLeft()
         var timeComplete = totalTime - timeLeft
-        var percent = Int(timeComplete/totalTime*100)
+        var percent = (timeComplete/totalTime)
         
         return percent
     }

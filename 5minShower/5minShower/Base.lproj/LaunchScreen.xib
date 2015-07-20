@@ -11,45 +11,29 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aSw-K1-dsI">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aSw-K1-dsI">
                     <rect key="frame" x="0.0" y="0.0" width="486" height="480"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="MainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gRA-l8-T0t">
-                    <rect key="frame" x="164" y="40" width="153" height="230"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-LK-DjC">
+                    <rect key="frame" x="196" y="130" width="89" height="200"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="gRA-l8-T0t" secondAttribute="height" multiplier="153:230" id="KTA-7s-cjc"/>
-                        <constraint firstAttribute="height" constant="230" id="h80-g9-7H0"/>
-                        <constraint firstAttribute="width" constant="153" id="wU5-AN-Z05"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-LX-xID">
-                    <rect key="frame" x="153" y="270" width="175" height="133"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="175" id="Jau-mt-afb"/>
-                        <constraint firstAttribute="width" secondItem="w6j-LX-xID" secondAttribute="height" multiplier="88:67" id="Yk2-dh-6us"/>
+                        <constraint firstAttribute="width" secondItem="HSs-LK-DjC" secondAttribute="height" multiplier="173:388" id="0UC-8L-gKj"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="w6j-LX-xID" secondAttribute="centerX" id="A28-SO-f46"/>
-                <constraint firstAttribute="centerX" secondItem="gRA-l8-T0t" secondAttribute="centerX" id="Ums-4m-QCM"/>
-                <constraint firstItem="w6j-LX-xID" firstAttribute="top" secondItem="gRA-l8-T0t" secondAttribute="bottom" constant="40" id="anx-Pb-7eL"/>
-                <constraint firstItem="aSw-K1-dsI" firstAttribute="top" secondItem="gRA-l8-T0t" secondAttribute="bottom" constant="-270" id="nFn-MG-25r"/>
+                <constraint firstAttribute="centerX" secondItem="HSs-LK-DjC" secondAttribute="centerX" id="7pf-Z1-JWO"/>
+                <constraint firstAttribute="bottom" secondItem="HSs-LK-DjC" secondAttribute="bottom" constant="150" id="JIr-Hx-lyq"/>
+                <constraint firstItem="HSs-LK-DjC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="130" id="jL1-7B-BZ7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="nFn-MG-25r"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
         <image name="LoadingBackground" width="1657" height="2761"/>
-        <image name="MainIcon" width="798" height="1213"/>
-        <image name="Title" width="910" height="736"/>
+        <image name="SplashScreen" width="910" height="2054"/>
     </resources>
 </document>
