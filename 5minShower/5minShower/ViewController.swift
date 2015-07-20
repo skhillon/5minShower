@@ -153,15 +153,20 @@ class ViewController: UIViewController {
         self.doneButton.hidden = false
         self.wave.hidden = true
         
-        if doubleTimeTaken < 300.0
-        {
-            self.waterSavedLabel.text = waterSavedLabelText
+        if doubleTimeTaken < 300.0 {
+            self.waterSavedLabel.alpha = 0
+            UIView.animateWithDuration(1.0, animations: {
+                self.waterSavedLabel.text = waterSavedLabelText
+                self.waterSavedLabel.alpha = 1
+            })
+        } else {
+            self.waterSavedLabel.alpha = 0
+            UIView.animateWithDuration(1.0, animations: {
+                self.waterSavedLabel.text = "You went over the goal by \(gallonsSaved * -1) gallons. We know you can do better!"
+                self.waterSavedLabel.alpha = 1
+            })
         }
         
-        else
-        {
-            self.waterSavedLabel.text = "You went over the goal by \(gallonsSaved * -1) gallons. We know you can do better!"
-        }
         UIView.animateWithDuration(3.0, animations: {
             self.waterSavedLabel.hidden = false
         })
@@ -185,6 +190,15 @@ class ViewController: UIViewController {
         // Move the wave based on the timer percentage completed
         if (timer.getPercentageCompleted() <= 1) {
             self.wave.frame.origin.y = CGFloat(1.0 - timer.getPercentageCompleted()) * self.view.frame.height
+        }
+        if timer.isComplete {
+            UIView.animateWithDuration(5.0, animations: {
+                self.volumeButton.alpha = 0
+                self.shuffleButton.alpha = 0
+                }, completion: { _ in
+                    self.volumeButton.hidden = true
+                    self.shuffleButton.hidden = true
+            })
         }
     }
     
