@@ -24,7 +24,7 @@ class TimerController: NSObject {
     var strFraction = "00"
     var isComplete = false
     
-    var totalTime: NSTimeInterval = 100
+    var totalTime: NSTimeInterval = 2
     
     // Properties of actual values
     var hours = 0
@@ -49,7 +49,7 @@ class TimerController: NSObject {
         var timeLeft = totalTime - elapsedTime
         
         if timeLeft <= 0 && isComplete == false {
-            audioPlayer.playRandomFromArray()
+            audioPlayer.keepPlayingRandomFromArray()
             label.textColor = UIColor(red:0.86, green:0.27, blue:0.27, alpha:1.0)
             isComplete = true
         }

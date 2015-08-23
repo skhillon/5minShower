@@ -14,15 +14,31 @@ class AudioPlayer {
     var audioPlayer = AVAudioPlayer()
     var audioArray: [NSURL] = []
     var started = false
+    var x = true
     
     func playRandomFromArray() {
-        println("JHJKLKJHJ")
+        println("rand")
         var index = Int(arc4random_uniform(UInt32(audioArray.count)))
         var currentURL = audioArray[index]
         self.play(currentURL)
+        
+       
+    }
+    func keepPlayingRandomFromArray(){
+        while(true){
+            if (x==true){
+                playRandomFromArray()
+                x = false
+                
+            }else if(audioPlayer.playing == false){
+                playRandomFromArray()
+            }
+        }
+        
     }
     
     func play(url: NSURL) {
+        println("swag")
         var alertSound = url
         
         var error:NSError?
@@ -30,7 +46,14 @@ class AudioPlayer {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
         started = true
+        if (audioPlayer.playing != true){
+            playRandomFromArray()
+        }
+        
+       
+        
     }
+    
     
     func pause() {
         if started {
