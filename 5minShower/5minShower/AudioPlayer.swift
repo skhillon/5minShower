@@ -12,7 +12,6 @@ import AVFoundation
 class AudioPlayer: NSObject {
     // Properties
     var avPlayer = AVAudioPlayer()
-    //var audioPlayer:AVAudioPlayer = AVAudioPlayer()
     var audioArray: [NSURL] = []
     var started = false
     var x = true
@@ -28,19 +27,6 @@ class AudioPlayer: NSObject {
         
        
     }
-//    func keepPlayingRandomFromArray(){
-//        
-//        while(true){
-//            if (x==true){
-//                playRandomFromArray()
-//                x = false
-//                
-//            }else if(audioPlayer.playing == false){
-//                playRandomFromArray()
-//            }
-//        }
-//        
-//    }
     
     func play(url: NSURL) {
         println("play")
@@ -51,22 +37,7 @@ class AudioPlayer: NSObject {
         avPlayer.delegate = self
         avPlayer.play()
         started = true
-//        if (audioPlayer.playing != true){
-//            playRandomFromArray()
-//        }
-        
-       
-        
     }
-
-    
-//    func playerDidFinishPlaying(note: NSNotification) {
-//        println("swag")
-//        index =  index + 1
-//        currentURL = audioArray[index]
-//        play(currentURL)
-//    }
-    
     
     
     func pauseClip() {

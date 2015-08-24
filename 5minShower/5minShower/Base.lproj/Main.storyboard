@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iED-Hq-27Y" userLabel="Timer">
-                                <rect key="frame" x="249" y="268" width="103" height="64"/>
+                                <rect key="frame" x="220" y="262.5" width="161.5" height="75"/>
                                 <fontDescription key="fontDescription" name="Simplifica" family="Simplifica" pointSize="64"/>
                                 <color key="textColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-O3-CQf">
                                 <rect key="frame" x="140" y="275.5" width="320" height="49.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="h5p-lT-qYK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Kfo-X4-gJ7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,6 +121,7 @@
                             <constraint firstItem="H7H-Yf-Dez" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="422" id="7ix-nc-l2z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H7H-Yf-Dez" secondAttribute="bottom" constant="75" id="8Ix-A5-hmK"/>
                             <constraint firstAttribute="centerX" secondItem="iED-Hq-27Y" secondAttribute="centerX" id="94P-a3-oF8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P4K-O3-CQf" secondAttribute="trailing" constant="124" id="Euq-ab-Q0i"/>
                             <constraint firstAttribute="centerY" secondItem="iED-Hq-27Y" secondAttribute="centerY" id="Hvn-Uj-uKr"/>
                             <constraint firstAttribute="centerX" secondItem="H7H-Yf-Dez" secondAttribute="centerX" id="LIs-yR-LOt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ko3-nA-elr" secondAttribute="bottom" constant="15" id="PUA-cg-M3v"/>
@@ -128,6 +129,7 @@
                             <constraint firstAttribute="centerY" secondItem="P4K-O3-CQf" secondAttribute="centerY" id="ToA-tH-qz7"/>
                             <constraint firstItem="qFr-yS-qYD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="X6Z-LU-E1u"/>
                             <constraint firstItem="Wdo-Hd-8lS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="X92-MF-VgW"/>
+                            <constraint firstItem="P4K-O3-CQf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="aph-Kj-9G6"/>
                             <constraint firstAttribute="centerY" secondItem="d3x-yP-mv7" secondAttribute="centerY" id="cfg-hW-0nA"/>
                             <constraint firstItem="ko3-nA-elr" firstAttribute="centerY" secondItem="qFr-yS-qYD" secondAttribute="centerY" id="ght-r8-2JX"/>
                             <constraint firstAttribute="centerX" secondItem="P4K-O3-CQf" secondAttribute="centerX" id="lhc-hh-b1R"/>
@@ -141,6 +143,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Euq-ab-Q0i"/>
                                 <exclude reference="lyM-xt-1Li"/>
                                 <exclude reference="7ix-nc-l2z"/>
                             </mask>
