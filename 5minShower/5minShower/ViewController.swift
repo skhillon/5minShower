@@ -32,8 +32,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var pcView: PCView!
     var wave = UIImageView()
     
-    var audioPlayer = AudioPlayer()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stopButton.hidden = true
@@ -45,7 +43,6 @@ class ViewController: UIViewController {
         self.doneButton.hidden = true
         
         timer.label = timerLabel
-        timer.audioPlayer = audioPlayer
         
         // Setup Animations
         mainWaterController.view = self.view
@@ -54,7 +51,7 @@ class ViewController: UIViewController {
         
         setupWaves()
         
-        audioPlayer.setup()
+        timer.audioPlayer.setup()
         
         waveTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "animateWave", userInfo: nil, repeats: true)
 
@@ -167,7 +164,7 @@ class ViewController: UIViewController {
         })
         mainWaterController.stop()
         
-        audioPlayer.pause()
+        timer.audioPlayer.pauseClip()
     }
     
     // MARK: Animation Functions

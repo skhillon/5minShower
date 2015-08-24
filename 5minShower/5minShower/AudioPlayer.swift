@@ -9,59 +9,74 @@
 import Foundation
 import AVFoundation
 
-class AudioPlayer {
+class AudioPlayer: NSObject {
     // Properties
-    var audioPlayer = AVAudioPlayer()
+    var avPlayer = AVAudioPlayer()
+    //var audioPlayer:AVAudioPlayer = AVAudioPlayer()
     var audioArray: [NSURL] = []
     var started = false
     var x = true
+    var currentURL = NSURL()
+    var index:Int!
+
     
     func playRandomFromArray() {
         println("rand")
-        var index = Int(arc4random_uniform(UInt32(audioArray.count)))
-        var currentURL = audioArray[index]
+        index = Int(arc4random_uniform(UInt32(audioArray.count)))
+        currentURL = audioArray[index]
         self.play(currentURL)
         
        
     }
-    func keepPlayingRandomFromArray(){
-        while(true){
-            if (x==true){
-                playRandomFromArray()
-                x = false
-                
-            }else if(audioPlayer.playing == false){
-                playRandomFromArray()
-            }
-        }
-        
-    }
+//    func keepPlayingRandomFromArray(){
+//        
+//        while(true){
+//            if (x==true){
+//                playRandomFromArray()
+//                x = false
+//                
+//            }else if(audioPlayer.playing == false){
+//                playRandomFromArray()
+//            }
+//        }
+//        
+//    }
     
     func play(url: NSURL) {
-        println("swag")
-        var alertSound = url
-        
+        println("play")
+
         var error:NSError?
-        audioPlayer = AVAudioPlayer(contentsOfURL: alertSound, error: &error)
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
+        avPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        avPlayer.prepareToPlay()
+        avPlayer.delegate = self
+        avPlayer.play()
         started = true
-        if (audioPlayer.playing != true){
-            playRandomFromArray()
-        }
+//        if (audioPlayer.playing != true){
+//            playRandomFromArray()
+//        }
         
        
         
     }
+
+    
+//    func playerDidFinishPlaying(note: NSNotification) {
+//        println("swag")
+//        index =  index + 1
+//        currentURL = audioArray[index]
+//        play(currentURL)
+//    }
     
     
-    func pause() {
+    
+    func pauseClip() {
         if started {
-            audioPlayer.pause()
+            avPlayer.pause()
         }
     }
     
     func setup() {
+        
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
         AVAudioSession.sharedInstance().setActive(true, error: nil)
         
@@ -75,5 +90,26 @@ class AudioPlayer {
         var song8 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("df8", ofType: "mp3")!)
         
         self.audioArray = [song1!, song2!, song3!, song4!, song5!, song6!, song6!, song7!, song8!]
+    }
+    
+//    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+//        println("swag")
+//        index =  index + 1
+//        currentURL = audioArray[index]
+//        play(currentURL)
+//    }
+    
+}
+
+extension AudioPlayer : AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        println("swag")
+        index =  index + 1
+        currentURL = audioArray[index]
+        play(currentURL)
+
+    }
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+        println("\(error.localizedDescription)")
     }
 }
