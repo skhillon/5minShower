@@ -24,7 +24,8 @@ class TimerController: NSObject {
     var strFraction = "00"
     var isComplete = false
     
-    var totalTime: NSTimeInterval = 2
+    //Time in Seconds
+    var totalTime: NSTimeInterval = 300
     
     // Properties of actual values
     var hours = 0

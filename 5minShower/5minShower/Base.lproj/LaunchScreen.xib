@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aSw-K1-dsI">
-                    <rect key="frame" x="0.0" y="0.0" width="1657" height="480"/>
+                    <rect key="frame" x="0.0" y="-200" width="1657" height="680"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-LK-DjC">
                     <rect key="frame" x="196" y="130" width="89" height="200"/>
@@ -28,7 +28,7 @@
                 <constraint firstAttribute="bottom" secondItem="HSs-LK-DjC" secondAttribute="bottom" constant="150" id="JIr-Hx-lyq"/>
                 <constraint firstAttribute="bottom" secondItem="aSw-K1-dsI" secondAttribute="bottom" id="Rk9-nr-aXz"/>
                 <constraint firstItem="HSs-LK-DjC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="130" id="jL1-7B-BZ7"/>
-                <constraint firstItem="aSw-K1-dsI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ph1-Jt-k0d"/>
+                <constraint firstItem="aSw-K1-dsI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-200" id="ph1-Jt-k0d"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

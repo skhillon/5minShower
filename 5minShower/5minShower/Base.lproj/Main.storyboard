@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5ui-oo-M6e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5ui-oo-M6e">
                                 <rect key="frame" x="-528" y="-1081" width="1657" height="2761"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdo-Hd-8lS" userLabel="PCView" customClass="PCView" customModule="_minShower" customModuleProvider="target">
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iED-Hq-27Y" userLabel="Timer">
-                                <rect key="frame" x="220" y="262.5" width="161.5" height="75"/>
+                                <rect key="frame" x="248.5" y="268" width="103" height="64"/>
                                 <fontDescription key="fontDescription" name="Simplifica" family="Simplifica" pointSize="64"/>
                                 <color key="textColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -77,14 +77,15 @@
                                     <action selector="shuffleButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rff-Ax-aHC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-O3-CQf">
-                                <rect key="frame" x="140" y="275.5" width="320" height="49.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats" textAlignment="center" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="P4K-O3-CQf">
+                                <rect key="frame" x="140" y="275" width="320" height="49.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Kfo-X4-gJ7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="36"/>
                                 <color key="textColor" red="0.1019607843" green="0.2666666667" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFr-yS-qYD">
                                 <rect key="frame" x="26" y="541" width="46" height="44"/>
@@ -142,6 +143,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Wdo-Hd-8lS" secondAttribute="trailing" constant="-16" id="vyR-VE-SZQ"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="5ui-oo-M6e"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="Euq-ab-Q0i"/>
                                 <exclude reference="lyM-xt-1Li"/>
