@@ -92,24 +92,17 @@ class AudioPlayer: NSObject {
         self.audioArray = [song1!, song2!, song3!, song4!, song5!, song6!, song6!, song7!, song8!]
     }
     
-//    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
-//        println("swag")
-//        index =  index + 1
-//        currentURL = audioArray[index]
-//        play(currentURL)
-//    }
-    
 }
 
 extension AudioPlayer : AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
         println("swag")
-        index =  index + 1
+        if index == audioArray.count - 1 {
+            index = 0
+        } else {
+            index =  index + 1
+        }
         currentURL = audioArray[index]
         play(currentURL)
-
-    }
-    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
-        println("\(error.localizedDescription)")
     }
 }
