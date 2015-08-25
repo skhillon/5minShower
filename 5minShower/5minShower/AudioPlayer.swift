@@ -22,16 +22,15 @@ class AudioPlayer: NSObject {
     func playRandomFromArray() {
         println("rand")
         index = Int(arc4random_uniform(UInt32(audioArray.count)))
-        currentURL = audioArray[index]
-        self.play(currentURL)
+        self.play(audioArray[index])
         
        
     }
     
     func play(url: NSURL) {
         println("play")
-
         var error:NSError?
+        
         avPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
         avPlayer.prepareToPlay()
         avPlayer.delegate = self
