@@ -68,6 +68,9 @@ class ViewController: UIViewController {
     
     @IBAction func playButtonTapped(sender: AnyObject) {
         println("playbuttontapped")
+        
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        
         music.shuffleMusic()
         music.playMusic()
         UIView.animateWithDuration(2.0, animations: {
@@ -119,6 +122,8 @@ class ViewController: UIViewController {
     
     @IBAction func stopButtonTapped(sender: AnyObject) {
         music.stop()
+        
+        UIApplication.sharedApplication().idleTimerDisabled = false
         
         let timeTaken = timer.getTimeComplete()
         let doubleTimeTaken = (Double)(timeTaken)
