@@ -12,7 +12,6 @@
 		8F02A2091B5ADF310036CE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F02A2071B5ADF310036CE27 /* Main.storyboard */; };
 		8F02A20B1B5ADF310036CE27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F02A20A1B5ADF310036CE27 /* Images.xcassets */; };
 		8F02A20E1B5ADF310036CE27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F02A20C1B5ADF310036CE27 /* LaunchScreen.xib */; };
-		8F02A21A1B5ADF310036CE27 /* _minShowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */; };
 		9FB35A4E1B5C391900099FEC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB35A4D1B5C391900099FEC /* AudioPlayer.swift */; };
 		9FB35A571B5C395500099FEC /* df1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A4F1B5C395500099FEC /* df1.mp3 */; };
 		9FB35A581B5C395500099FEC /* df2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB35A501B5C395500099FEC /* df2.mp3 */; };
@@ -49,8 +48,6 @@
 		8F02A20A1B5ADF310036CE27 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8F02A20D1B5ADF310036CE27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8F02A2131B5ADF310036CE27 /* 5minShowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 5minShowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F02A2181B5ADF310036CE27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _minShowerTests.swift; sourceTree = "<group>"; };
 		9FB35A4D1B5C391900099FEC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		9FB35A4F1B5C395500099FEC /* df1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df1.mp3; sourceTree = "<group>"; };
 		9FB35A501B5C395500099FEC /* df2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = df2.mp3; sourceTree = "<group>"; };
@@ -90,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				8F02A2001B5ADF310036CE27 /* 5minShower */,
-				8F02A2161B5ADF310036CE27 /* 5minShowerTests */,
 				8F02A1FF1B5ADF310036CE27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,23 +132,6 @@
 				9FB35A551B5C395500099FEC /* df7.mp3 */,
 				9FB35A561B5C395500099FEC /* df8.mp3 */,
 				8F02A2021B5ADF310036CE27 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8F02A2161B5ADF310036CE27 /* 5minShowerTests */ = {
-			isa = PBXGroup;
-			children = (
-				8F02A2191B5ADF310036CE27 /* _minShowerTests.swift */,
-				8F02A2171B5ADF310036CE27 /* Supporting Files */,
-			);
-			path = 5minShowerTests;
-			sourceTree = "<group>";
-		};
-		8F02A2171B5ADF310036CE27 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8F02A2181B5ADF310036CE27 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -286,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F02A21A1B5ADF310036CE27 /* _minShowerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +385,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = 5minShower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdf8f2ba-91bc-4a28-b026-91e9155264fa";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -418,9 +398,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = 5minShower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fdf8f2ba-91bc-4a28-b026-91e9155264fa";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
