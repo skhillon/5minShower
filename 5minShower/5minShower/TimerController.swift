@@ -11,8 +11,8 @@ import UIKit
 
 class TimerController: NSObject {
     // Time Properties
-    var timer = NSTimer()
-    var startTime = NSTimeInterval()
+    var timer = Timer()
+    var startTime = TimeInterval()
     
     // Audio Controlling
     var audioPlayer = AudioPlayer()
@@ -25,7 +25,7 @@ class TimerController: NSObject {
     var isComplete = false
     
     //Time in Seconds
-    var totalTime: NSTimeInterval = 300
+    var totalTime: TimeInterval = 300
     
     // Properties of actual values
     var hours = 0
@@ -37,13 +37,13 @@ class TimerController: NSObject {
     var label = UILabel()
     
     // MARK: Main Update Function
-    func updateTime() {
+    @objc func updateTime() {
         
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var currentTime = NSDate.timeIntervalSinceReferenceDate
         
         //Find the difference between current time and start time.
         
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: TimeInterval = currentTime - startTime
         
         //Set the elapsed time to the amount of time left in the timer
         
@@ -59,7 +59,7 @@ class TimerController: NSObject {
         
         hours = Int(timeLeft / 3600.0)
         
-        timeLeft -= (NSTimeInterval(hours) * 3600)
+        timeLeft -= (TimeInterval(hours) * 3600)
         
         //calculate the minutes in elapsed time.
         
@@ -69,7 +69,7 @@ class TimerController: NSObject {
             minutesLabel *= -1
         }
         
-        timeLeft -= (NSTimeInterval(minutes) * 60)
+        timeLeft -= (TimeInterval(minutes) * 60)
         
         //calculate the seconds in elapsed time.
         
@@ -79,7 +79,7 @@ class TimerController: NSObject {
             secondsLabel *= -1
         }
         
-        timeLeft -= NSTimeInterval(seconds)
+        timeLeft -= TimeInterval(seconds)
         
         //find out the fraction of milliseconds to be displayed.
         
@@ -98,7 +98,7 @@ class TimerController: NSObject {
     
     // MARK: Setting Functions
     func resetTimer() {
-        startTime = NSDate.timeIntervalSinceReferenceDate()
+        startTime = Date.timeIntervalSinceReferenceDate
         var strHours = "00"
         var strMinutes = "00"
         var strSeconds = "00"
@@ -110,9 +110,9 @@ class TimerController: NSObject {
         label.text = "\(strHours):\(strMinutes):\(strSeconds):\(strFraction)"
     }
     
-    func resetTimerWithNewTime(newTotalTime: NSTimeInterval) {
+    func resetTimerWithNewTime(newTotalTime: TimeInterval) {
         self.totalTime = newTotalTime
-        startTime = NSDate.timeIntervalSinceReferenceDate()
+        startTime = Date.timeIntervalSinceReferenceDate
         var strHours = "00"
         var strMinutes = "00"
         var strSeconds = "00"
@@ -126,10 +126,9 @@ class TimerController: NSObject {
     
     // MARK: Start/Stop Functions
     func start() {
-        if !timer.valid {
-            let aSelector: Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+        if !timer.isValid {
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+            startTime = Date.timeIntervalSinceReferenceDate
         }
     }
     
@@ -140,16 +139,16 @@ class TimerController: NSObject {
     
     
     // MARK: Value Functions
-    func getTimeLeft() -> NSTimeInterval {
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+    func getTimeLeft() -> TimeInterval {
+        var currentTime = Date.timeIntervalSinceReferenceDate
         //Find the difference between current time and start time.
-        var elapsedTime: NSTimeInterval = currentTime - startTime
+        var elapsedTime: TimeInterval = currentTime - startTime
         //Set the elapsed time to the amount of time left in the timer
         var timeLeft2 = totalTime - elapsedTime
         return timeLeft2
     }
     
-    func getTimeComplete() -> NSTimeInterval {
+    func getTimeComplete() -> TimeInterval {
         var timeLeft2 = getTimeLeft()
         var timeComplete = totalTime - timeLeft2
         

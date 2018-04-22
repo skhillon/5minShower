@@ -16,7 +16,7 @@ public class MyStyleKit : NSObject {
 
     //// Drawing Methods
 
-    public class func drawShower(#frame: CGRect) {
+    public class func drawShower(frame: CGRect) {
         //// Color Declarations
         let shape4Color2 = UIColor(red: 0.125, green: 0.341, blue: 0.443, alpha: 1.000)
         let shape3Color2 = UIColor(red: 0.125, green: 0.341, blue: 0.443, alpha: 1.000)
@@ -24,46 +24,55 @@ public class MyStyleKit : NSObject {
 
 
         //// Subframes
-        let shower2: CGRect = CGRectMake(frame.minX, frame.minY, floor((frame.width) * 1.00022 + 0.44) + 0.06, floor((frame.height) * 0.99872 + 0.5))
+        let w: CGFloat = floor((frame.width) * 1.00022 + 0.44) + 0.06
+        let h: CGFloat = floor((frame.height) * 0.99872 + 0.5)
+        let shower2 = CGRect(x: frame.minX, y: frame.minY, width: w, height: h)
 
 
         //// Shower 2
         //// Shape 4 Drawing
-        var shape4Path = UIBezierPath()
-        shape4Path.moveToPoint(CGPointMake(shower2.minX + 0.94289 * shower2.width, shower2.minY + 0.27134 * shower2.height))
-        shape4Path.addLineToPoint(CGPointMake(shower2.minX + 5.00000 * shower2.width, shower2.minY + 0.27134 * shower2.height))
-        shape4Path.addLineToPoint(CGPointMake(shower2.minX + 5.00000 * shower2.width, shower2.minY + 0.00000 * shower2.height))
-        shape4Path.addLineToPoint(CGPointMake(shower2.minX + 0.94289 * shower2.width, shower2.minY + 0.00000 * shower2.height))
-        shape4Path.addLineToPoint(CGPointMake(shower2.minX + 0.94289 * shower2.width, shower2.minY + 0.27134 * shower2.height))
-        shape4Path.closePath()
+        let shape4Path = UIBezierPath()
+        shape4Path.move(to: CGPoint(x: shower2.minX + 0.94289 * shower2.width, y: shower2.minY + 0.27134 * shower2.height))
+        shape4Path.addLine(to: CGPoint(x: shower2.minX + 5.00000 * shower2.width, y: shower2.minY + 0.27134 * shower2.height))
+        shape4Path.addLine(to: CGPoint(x: shower2.minX + 5.00000 * shower2.width, y: shower2.minY + 0.00000 * shower2.height))
+        shape4Path.addLine(to: CGPoint(x: shower2.minX + 0.94289 * shower2.width, y: shower2.minY + 0.00000 * shower2.height))
+        shape4Path.addLine(to: CGPoint(x: shower2.minX + 0.94289 * shower2.width, y: shower2.minY + 0.27134 * shower2.height))
+        shape4Path.close()
         shape4Color2.setFill()
         shape4Path.fill()
 
 
         //// Shape 3 Drawing
         var shape3Path = UIBezierPath()
-        shape3Path.moveToPoint(CGPointMake(shower2.minX + 0.54681 * shower2.width, shower2.minY + 0.44980 * shower2.height))
-        shape3Path.addCurveToPoint(CGPointMake(shower2.minX + 0.67600 * shower2.width, shower2.minY + 0.26380 * shower2.height), controlPoint1: CGPointMake(shower2.minX + 0.54681 * shower2.width, shower2.minY + 0.44980 * shower2.height), controlPoint2: CGPointMake(shower2.minX + 0.63219 * shower2.width, shower2.minY + 0.36932 * shower2.height))
-        shape3Path.addCurveToPoint(CGPointMake(shower2.minX + 0.91948 * shower2.width, shower2.minY + 0.15693 * shower2.height), controlPoint1: CGPointMake(shower2.minX + 0.75040 * shower2.width, shower2.minY + 0.09746 * shower2.height), controlPoint2: CGPointMake(shower2.minX + 0.91948 * shower2.width, shower2.minY + 0.15693 * shower2.height))
-        shape3Path.addLineToPoint(CGPointMake(shower2.minX + 0.91948 * shower2.width, shower2.minY + 0.07464 * shower2.height))
-        shape3Path.addCurveToPoint(CGPointMake(shower2.minX + 0.62200 * shower2.width, shower2.minY + 0.21031 * shower2.height), controlPoint1: CGPointMake(shower2.minX + 0.91948 * shower2.width, shower2.minY + 0.07464 * shower2.height), controlPoint2: CGPointMake(shower2.minX + 0.73540 * shower2.width, shower2.minY + 0.00156 * shower2.height))
-        shape3Path.addCurveToPoint(CGPointMake(shower2.minX + 0.48641 * shower2.width, shower2.minY + 0.38066 * shower2.height), controlPoint1: CGPointMake(shower2.minX + 0.54821 * shower2.width, shower2.minY + 0.34614 * shower2.height), controlPoint2: CGPointMake(shower2.minX + 0.48641 * shower2.width, shower2.minY + 0.38066 * shower2.height))
-        shape3Path.addLineToPoint(CGPointMake(shower2.minX + 0.45825 * shower2.width, shower2.minY + 0.34846 * shower2.height))
-        shape3Path.addLineToPoint(CGPointMake(shower2.minX + 0.41517 * shower2.width, shower2.minY + 0.40933 * shower2.height))
-        shape3Path.addLineToPoint(CGPointMake(shower2.minX + 0.52993 * shower2.width, shower2.minY + 0.54054 * shower2.height))
-        shape3Path.addLineToPoint(CGPointMake(shower2.minX + 0.57297 * shower2.width, shower2.minY + 0.47972 * shower2.height))
-        shape3Path.addLineToPoint(CGPointMake(shower2.minX + 0.54681 * shower2.width, shower2.minY + 0.44980 * shower2.height))
-        shape3Path.closePath()
+        shape3Path.move(to: CGPoint(x: shower2.minX + 0.54681 * shower2.width, y: shower2.minY + 0.44980 * shower2.height))
+        shape3Path.addCurve(to: CGPoint(x: shower2.minX + 0.67600 * shower2.width, y: shower2.minY + 0.26380 * shower2.height), controlPoint1: CGPoint(x: shower2.minX + 0.54681 * shower2.width, y: shower2.minY + 0.44980 * shower2.height), controlPoint2: CGPoint(x: shower2.minX + 0.63219 * shower2.width, y: shower2.minY + 0.36932 * shower2.height))
+        shape3Path.addCurve(to: CGPoint(x: shower2.minX + 0.91948 * shower2.width, y: shower2.minY + 0.15693 * shower2.height), controlPoint1: CGPoint(x: shower2.minX + 0.75040 * shower2.width, y: shower2.minY + 0.09746 * shower2.height), controlPoint2: CGPoint(x: shower2.minX + 0.91948 * shower2.width, y: shower2.minY + 0.15693 * shower2.height))
+        shape3Path.addLine(to: CGPoint(x: shower2.minX + 0.91948 * shower2.width, y: shower2.minY + 0.07464 * shower2.height))
+        shape3Path.addCurve(to: CGPoint(x: shower2.minX + 0.62200 * shower2.width, y: shower2.minY + 0.21031 * shower2.height), controlPoint1: CGPoint(x: shower2.minX + 0.91948 * shower2.width, y: shower2.minY + 0.07464 * shower2.height), controlPoint2: CGPoint(x: shower2.minX + 0.73540 * shower2.width, y: shower2.minY + 0.00156 * shower2.height))
+        shape3Path.addCurve(to: CGPoint(x: shower2.minX + 0.48641 * shower2.width, y: shower2.minY + 0.38066 * shower2.height), controlPoint1: CGPoint(x: shower2.minX + 0.54821 * shower2.width, y: shower2.minY + 0.34614 * shower2.height), controlPoint2: CGPoint(x: shower2.minX + 0.48641 * shower2.width, y: shower2.minY + 0.38066 * shower2.height))
+        shape3Path.addLine(to: CGPoint(x: shower2.minX + 0.45825 * shower2.width, y: shower2.minY + 0.34846 * shower2.height))
+        shape3Path.addLine(to: CGPoint(x: shower2.minX + 0.41517 * shower2.width, y: shower2.minY + 0.40933 * shower2.height))
+        shape3Path.addLine(to: CGPoint(x: shower2.minX + 0.52993 * shower2.width, y: shower2.minY + 0.54054 * shower2.height))
+        shape3Path.addLine(to: CGPoint(x: shower2.minX + 0.57297 * shower2.width, y: shower2.minY + 0.47972 * shower2.height))
+        shape3Path.addLine(to: CGPoint(x: shower2.minX + 0.54681 * shower2.width, y: shower2.minY + 0.44980 * shower2.height))
+        shape3Path.close()
         shape3Color2.setFill()
         shape3Path.fill()
 
 
         //// Shape 5 Drawing
         var shape5Path = UIBezierPath()
-        shape5Path.moveToPoint(CGPointMake(shower2.minX + 0.52560 * shower2.width, shower2.minY + 1.00000 * shower2.height))
-        shape5Path.addCurveToPoint(CGPointMake(shower2.minX + 0.00000 * shower2.width, shower2.minY + 0.53386 * shower2.height), controlPoint1: CGPointMake(shower2.minX + 0.52560 * shower2.width, shower2.minY + 1.00000 * shower2.height), controlPoint2: CGPointMake(shower2.minX + 0.63067 * shower2.width, shower2.minY + 0.16964 * shower2.height))
-        shape5Path.addLineToPoint(CGPointMake(shower2.minX + 0.52560 * shower2.width, shower2.minY + 1.00000 * shower2.height))
-        shape5Path.closePath()
+        shape5Path.move(to: CGPoint(x: shower2.minX + 0.52560 * shower2.width,
+                                    y: shower2.minY + 1.00000 * shower2.height))
+        shape5Path.addCurve(to: CGPoint(x: shower2.minX + 0.00000 * shower2.width,
+                                        y: shower2.minY + 0.53386 * shower2.height),
+                            controlPoint1: CGPoint(x: shower2.minX + 0.52560 * shower2.width,
+                                                   y: shower2.minY + 1.00000 * shower2.height),
+                            controlPoint2: CGPoint(x: shower2.minX + 0.63067 * shower2.width,
+                                                   y: shower2.minY + 0.16964 * shower2.height))
+        shape5Path.addLine(to: CGPoint(x: shower2.minX + 0.52560 * shower2.width,
+                                       y: shower2.minY + 1.00000 * shower2.height))
+        shape5Path.close()
         shape5Color2.setFill()
         shape5Path.fill()
     }
